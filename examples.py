@@ -1,10 +1,13 @@
-numbers = "10 20 34 2 55"
+file = open('shop.txt','r',encoding='utf-8')
 
-listOfNumbers = numbers.split(" ")
+leastProduct = 99999
+leastLine = []
 
-sumNums = 0
-
-for num in listOfNumbers:
-    sumNums += int(num)
-
-print(sumNums)
+for line in file:
+    listValues = line.split(',')
+    if int(listValues[4]) < int(leastProduct):
+        leastProduct = int(listValues[4])
+        leastLine = listValues
+        
+    
+print(leastLine)
