@@ -1,13 +1,11 @@
-file = open('shop.txt','r',encoding='utf-8')
+personInfo = {'виктор':'+777777777',
+              'нурбол':'+77749685512',
+              'искандер':'+78996251485'}
 
-leastProduct = 99999
-leastLine = []
+name = input("Введите имя: ")
+name = name.lower()
 
-for line in file:
-    listValues = line.split(',')
-    if int(listValues[4]) < int(leastProduct):
-        leastProduct = int(listValues[4])
-        leastLine = listValues
-        
-    
-print(leastLine)
+if name in personInfo:
+    print(personInfo[name])
+else:
+    print("Такого имени нет")
